@@ -1,76 +1,3 @@
-footer {
-  grid-area: footer;
-  background: rgb(13, 71, 161);
-  text-align: center;
-  padding-top: 5vh;
-  width: 100%;
-}
-
-.redes,
-.politicas,
-.derechosreservados {
-  color: rgb(247, 249, 249);
-  padding: 5px;
-  font-family: cursive;
-}
-
-header {
-  grid-area: header;
-  background: rgb(13, 71, 161);
-  padding: 0 20px;
-  margin: 0px 2px;
-  color: rgb(247, 249, 249);
-  height: fit-content;
-  width: 100%;
-}
-
-header form {
-  margin-left: 60px;
-  align-items: center;
-}
-
-.navbar-brand {
-  color: rgb(247, 249, 249);
-  font-size: x-large;
-  align-content: center;
-}
-.navbar-brand:hover {
-  animation: agitar 0.5s;
-  animation-iteration-count: infinite;
-}
-
-.navbar-nav {
-  color: rgb(247, 249, 249);
-  cursor: pointer;
-}
-
-/*ANIMACION NOOBER*/
-@keyframes agitar {
-  0% {
-    transform: translate(-1px, -2px) rotate(0deg);
-  }
-  20% {
-    transform: translate(3px, 2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  90% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
 body {
   margin: 0;
   padding: 0;
@@ -119,33 +46,6 @@ body {
   grid-template-columns: 1fr;
 }
 
-/*ANIMACION NOOBER*/
-@keyframes agitar {
-  0% {
-    transform: translate(-1px, -2px) rotate(0deg);
-  }
-  20% {
-    transform: translate(3px, 2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  90% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
 .container-fluid {
   text-align: center;
   align-content: center;
@@ -217,8 +117,8 @@ input {
   width: fit-content;
   padding: 10px 10px;
   margin: 200px 350px;
-  display: flexbox;
-  align-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #imagensesion {
@@ -235,10 +135,11 @@ input {
 
 #registro {
   grid-area: registro;
-  display: block;
-  padding: 80px 250px 80px 250px;
+  display: flexbox;
+  padding: 50px 50px 50px 50px;
   margin: 10px;
   border-radius: 20px;
+  align-content: center;
   height: fit-content;
   width: fit-content;
   border: 2px solid rgb(247, 249, 249);
@@ -286,9 +187,9 @@ input {
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 40vh;
+  height: fit-content;
   padding: 5px 5px;
-  margin: 5px 10px;
+  margin: 5px 0px;
   border: 2px solid rgb(247, 249, 249);
 }
 
@@ -298,7 +199,7 @@ input {
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 40vh;
+  height: fit-content;
   padding: 5px 5px;
   margin: 5px 10px;
   border: 2px solid rgb(247, 249, 249);
@@ -388,9 +289,93 @@ p {
     height: fit-content;
   }
   #registro {
-    grid-area: registro;
     flex-direction: column;
     height: fit-content;
+    width: fit-content;
+    padding: 5vh;
+  }
+}
+@media (max-width: 1300px) and (min-width: 760px) {
+  body {
+    font-size: medium;
+  }
+  #registro {
+    display: flexbox;
+    justify-content: space-between;
+    padding: 50px 50px 50px 50px;
+  }
+}
+footer {
+  grid-area: footer;
+  background: rgb(13, 71, 161);
+  text-align: center;
+  padding-top: 5vh;
+  width: 100%;
+}
+
+.redes,
+.politicas,
+.derechosreservados {
+  color: rgb(247, 249, 249);
+  padding: 5px;
+  font-family: cursive;
+}
+
+header {
+  grid-area: header;
+  background: rgb(13, 71, 161);
+  padding: 0 20px;
+  margin: 0px 2px;
+  color: rgb(247, 249, 249);
+  height: fit-content;
+  width: 100%;
+}
+
+header form {
+  margin-left: 60px;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: rgb(247, 249, 249);
+  font-size: x-large;
+  align-content: center;
+}
+.navbar-brand:hover {
+  animation: agitar 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.navbar-nav {
+  color: rgb(247, 249, 249);
+  cursor: pointer;
+}
+
+/*ANIMACION NOOBER*/
+@keyframes agitar {
+  0% {
+    transform: translate(-1px, -2px) rotate(0deg);
+  }
+  20% {
+    transform: translate(3px, 2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  90% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 

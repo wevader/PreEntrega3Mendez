@@ -1,4 +1,4 @@
-@import "footer","header";
+
 body {
   margin: 0;
   padding: 0;
@@ -48,40 +48,6 @@ body {
   grid-template-columns: 1fr;
 }
 
-/*ANIMACION NOOBER*/
-@keyframes agitar {
-  0% {
-    transform: translate(-1px, -2px) rotate(0deg);
-  }
-
-  20% {
-    transform: translate(3px, 2px) rotate(1deg);
-  }
-
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-
-  80% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-
-  90% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
 
 .container-fluid {
   text-align: center;
@@ -157,8 +123,8 @@ input {
   width: fit-content;
   padding: 10px 10px;
   margin: 200px 350px;
-  display: flexbox;
-  align-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #imagensesion {
@@ -175,10 +141,11 @@ input {
 
 #registro {
   grid-area: registro;
-  display: block;
-  padding: 80px 250px 80px 250px;
+  display: flexbox;
+  padding: 50px 50px 50px 50px;
   margin: 10px;
   border-radius: 20px;
+  align-content: center;
   height: fit-content;
   width: fit-content;
   border: 2px solid rgb(247, 249, 249);
@@ -226,9 +193,9 @@ input {
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 40vh;
+  height: fit-content;
   padding: 5px 5px;
-  margin: 5px 10px;
+  margin: 5px 0px;
   border: 2px solid rgb(247, 249, 249);
 }
 
@@ -238,7 +205,7 @@ input {
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 40vh;
+  height: fit-content;
   padding: 5px 5px;
   margin: 5px 10px;
   border: 2px solid rgb(247, 249, 249);
@@ -340,8 +307,23 @@ p {
   }
 
   #registro {
-    grid-area: registro;
     flex-direction: column;
     height: fit-content;
+    width: fit-content;
+    padding: 5vh;
+  
   }
 }
+@media (max-width: 1300px) and (min-width: 760px){
+  body {
+    font-size: medium;
+  }
+  #registro {
+    display: flexbox;
+    justify-content: space-between;
+    padding: 50px 50px 50px 50px;
+
+}
+
+}
+@import "footer","header";
