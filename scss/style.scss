@@ -1,76 +1,4 @@
-footer {
-  grid-area: footer;
-  background: rgb(13, 71, 161);
-  text-align: center;
-  padding-top: 5vh;
-  width: 100%;
-}
-
-.redes,
-.politicas,
-.derechosreservados {
-  color: rgb(247, 249, 249);
-  padding: 5px;
-  font-family: cursive;
-}
-
-header {
-  grid-area: header;
-  background: rgb(13, 71, 161);
-  padding: 0 20px;
-  margin: 0px 2px;
-  color: rgb(247, 249, 249);
-  height: fit-content;
-  width: 100%;
-}
-
-header form {
-  margin-left: 60px;
-  align-items: center;
-}
-
-.navbar-brand {
-  color: rgb(247, 249, 249);
-  font-size: x-large;
-  align-content: center;
-}
-.navbar-brand:hover {
-  animation: agitar 0.5s;
-  animation-iteration-count: infinite;
-}
-
-.navbar-nav {
-  color: rgb(247, 249, 249);
-  cursor: pointer;
-}
-
-/*ANIMACION NOOBER*/
-@keyframes agitar {
-  0% {
-    transform: translate(-1px, -2px) rotate(0deg);
-  }
-  20% {
-    transform: translate(3px, 2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  90% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
+@import "footer","header";
 body {
   margin: 0;
   padding: 0;
@@ -80,6 +8,7 @@ body {
 }
 
 /*PLANTILLAS*/
+
 #plantillahome {
   display: grid;
   height: 100vh;
@@ -124,28 +53,36 @@ body {
   0% {
     transform: translate(-1px, -2px) rotate(0deg);
   }
+
   20% {
     transform: translate(3px, 2px) rotate(1deg);
   }
+
   50% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
+
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
   }
+
   70% {
     transform: translate(3px, 1px) rotate(-1deg);
   }
+
   80% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
+
   90% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
+
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 .container-fluid {
   text-align: center;
   align-content: center;
@@ -173,13 +110,15 @@ body {
   border-bottom: 5px;
   border: 2px solid rgb(66, 66, 66);
   transition: all 0.4s;
-}
-.btn:hover {
-  border: 2px solid rgb(247, 249, 249);
-  background: rgb(13, 71, 161);
+
+  &:hover {
+    border: 2px solid rgb(247, 249, 249);
+    background: rgb(13, 71, 161);
+  }
 }
 
 /*PSEUDO-CLASES*/
+
 div ul:link {
   color: rgb(247, 249, 249);
 }
@@ -190,6 +129,7 @@ input {
 }
 
 /*GRILLAS*/
+
 #noticias {
   grid-area: noticias;
   background-color: rgb(66, 66, 66);
@@ -309,6 +249,7 @@ input {
 }
 
 /*ACCESORIOS*/
+
 h4 {
   color: rgb(247, 249, 249);
   margin: 15px 0px;
@@ -330,10 +271,11 @@ p {
   border-radius: 30px;
   margin-top: 15px;
   transition: all 0.4s;
-}
-.agregar-a-carrito:hover {
-  background: rgb(13, 71, 161);
-  color: rgb(247, 249, 249);
+
+  &:hover {
+    background: rgb(13, 71, 161);
+    color: rgb(247, 249, 249);
+  }
 }
 
 .joys {
@@ -341,6 +283,7 @@ p {
 }
 
 /*REGISTRO*/
+
 .form-control {
   align-self: baseline;
 }
@@ -350,48 +293,55 @@ p {
 }
 
 /* RESPONSIVE */
+
 /* Smartphones (horizontal) ----------- */
 @media (max-width: 760px) {
   body {
     font-size: small;
   }
+
   #plantillahome {
     grid-template-areas: "header" "noticias" "ofertas" "footer";
     grid-template-columns: 1fr;
   }
+
   #plantillanosotros {
     display: grid;
     grid-template-areas: "header" "fotos" "historia" "historiados" "footer";
     grid-template-columns: 1fr;
   }
+
   #fotos {
     height: 45vh;
     padding: 0 50px;
     margin: 5px;
   }
+
   #plantillasesion {
     display: grid;
     grid-template-areas: "header" "imagensesion" "datos" "footer";
     grid-template-columns: 1fr;
   }
+
   #imagensesion {
     height: 40vh;
     padding: 0 2px;
     margin: 0 2px;
   }
+
   #datos {
     margin: 20px 100px;
   }
+
   #accesorios1, #accesorios2 {
     flex-direction: column;
     display: block;
     height: fit-content;
   }
+
   #registro {
     grid-area: registro;
     flex-direction: column;
     height: fit-content;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
