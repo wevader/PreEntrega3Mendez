@@ -1,24 +1,26 @@
-
+@import "footer","header","variable";
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  background: rgb(66, 66, 66);
-  font-family: cursive;
+  width: $ancho;
+  background: $gray;
+  font-family: $font;
 }
 
 /*PLANTILLAS*/
 
 #plantillahome {
   display: grid;
-  height: 100vh;
+  height: $alto;
+  width: $ancho;
   grid-template-areas: "header header" "noticias ofertas" "footer footer";
   grid-template-columns: 1fr 1fr;
 }
 
 #plantillasesion {
   display: grid;
-  height: 100vh;
+  height: $alto;
+  width: $ancho;
   grid-template-areas: "header header" "imagensesion datos" "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -26,15 +28,16 @@ body {
 
 #plantillacuenta {
   display: grid;
-  height: 100vh;
-  width: 100%;
+  height: $alto;
+  width: $ancho;
   grid-template-areas: "header" "registro" "footer";
   grid-template-columns: 1fr;
 }
 
 #plantillanosotros {
   display: grid;
-  height: 100vh;
+  height: $alto;
+  width: $ancho;
   grid-template-areas: "header header header" "fotos historia historia" "fotos historiados historiados" "footer footer footer";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -42,8 +45,8 @@ body {
 
 #plantillaaccesorios {
   display: grid;
-  height: 100vh;
-  width: 100%;
+  height: $alto;
+  width: $ancho;
   grid-template-areas: "header" "accesorios1" "accesorios2" "footer";
   grid-template-columns: 1fr;
 }
@@ -56,197 +59,162 @@ body {
 
 .form-control {
   box-shadow: none;
-  size: adjust 30px;
+  size: adjust ($step*3);
 }
 
 .d-block {
-  border-radius: 10px;
+  border-radius: $step;
 }
 
 .carouselslide {
-  width: 100%;
-  padding-top: 45px;
-  font-family: cursive;
+  width: $ancho;
+  padding-top: ($step*4)+5;
+  font-family: $font;
 }
 
 .btn {
-  background: rgb(247, 249, 249);
-  font-family: cursive;
-  color: rgb(13, 71, 161);
+  background: $white;
+  font-family: $font;
+  color: $blue;
   border-bottom: 5px;
-  border: 2px solid rgb(66, 66, 66);
+  border: 2px solid $gray;
   transition: all 0.4s;
 
   &:hover {
-    border: 2px solid rgb(247, 249, 249);
-    background: rgb(13, 71, 161);
+    border: 2px solid $white;
+    background: $blue;
   }
 }
 
 /*PSEUDO-CLASES*/
 
 div ul:link {
-  color: rgb(247, 249, 249);
+  color: $white;
 }
 
 input {
   border-radius: 2px;
-  border: 1px solid rgb(247, 249, 249);
+  border: 1px solid $white;
 }
 
 /*GRILLAS*/
 
 #noticias {
   grid-area: noticias;
-  background-color: rgb(66, 66, 66);
-  padding: 10px;
+  background-color: $gray;
+  padding: $step;
   display: flex;
   justify-content: center;
 }
 
 #ofertas {
   grid-area: ofertas;
-  background-color: rgb(66, 66, 66);
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  @extend #noticias;
 }
 
 #datos {
   grid-area: datos;
-  background: rgb(66, 66, 66);
-  color: rgb(247, 249, 249);
-  border: 2px solid rgb(247, 249, 249);
-  border-radius: 20px;
+  display: flexbox;
+  padding: ($step*5);
+  margin: $step;
+  border-radius: ($step*2);
+  align-content: center;
   height: fit-content;
   width: fit-content;
-  padding: 10px 10px;
-  margin: 200px 350px;
-  display: flex;
-  justify-content: center;
+  border: 2px solid $white;
+  background: $gray;
+  color: $white;
 }
 
 #imagensesion {
   grid-area: imagensesion;
-  background-image: url(../imageneswep/top-de-accesorios-gaming.jpg);
-  color: rgb(247, 249, 249);
-  padding: 0 50px;
+  background-image: url(../imageneswep/imagenaccesorios.jpg);
+  color: $white;
+  padding: 0 ($step*5);
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
-  width: 100%;
-  height: 85vh;
+  border-radius: $step;
+  width: $ancho;
+  height: ($alto)-15;
 }
 
 #registro {
   grid-area: registro;
-  display: flexbox;
-  padding: 50px 50px 50px 50px;
-  margin: 10px;
-  border-radius: 20px;
-  align-content: center;
-  height: fit-content;
-  width: fit-content;
-  border: 2px solid rgb(247, 249, 249);
-  background: rgb(66, 66, 66);
-  color: rgb(247, 249, 249);
+  @extend #datos;
 }
 
 #fotos {
   grid-area: fotos;
   background-image: url(../imageneswep/top-de-accesorios-gaming.jpg);
-  color: rgb(247, 249, 249);
-  padding: 0 50px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  width: 100%;
-  height: 85vh;
+  @extend #imagensesion;
 }
 
 #historia {
   grid-area: historia;
-  background-color: rgb(66, 66, 66);
-  color: rgb(247, 249, 249);
-  border-radius: 5px;
-  height: 40vh;
-  padding: 5px 5px;
-  margin: 5px 10px;
-  border: 2px solid rgb(247, 249, 249);
+  background-color: $gray;
+  color: $white;
+  border-radius: ($step)/2;
+  height: ($alto)-60;
+  padding: ($step)/2;
+  margin: ($step)/2 $step;
+  border: 2px solid $white;
 }
 
 #historiados {
   grid-area: historiados;
-  background-color: rgb(66, 66, 66);
-  color: rgb(247, 249, 249);
-  border-radius: 5px;
-  height: 40vh;
-  padding: 5px 5px;
-  margin: 5px 10px;
-  border: 2px solid rgb(247, 249, 249);
+  @extend #historia;
 }
 
-#accesorios1 {
+#accesorios1{
   grid-area: accesorios1;
-  background-color: rgb(66, 66, 66);
+  background-color: $gray;
   text-align: center;
   display: flex;
   justify-content: center;
   height: fit-content;
-  padding: 5px 5px;
-  margin: 5px 0px;
-  border: 2px solid rgb(247, 249, 249);
+  padding: ($step)/2;
+  margin: ($step)/2 0px;
+  border: 2px solid $white;
 }
 
-#accesorios2 {
+#accesorios2{
   grid-area: accesorios2;
-  background-color: rgb(66, 66, 66);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  height: fit-content;
-  padding: 5px 5px;
-  margin: 5px 10px;
-  border: 2px solid rgb(247, 249, 249);
+  @extend #accesorios1;
 }
 
-#exampleCheck1, #gridCheck {
-  display: inline-block;
-}
 
 /*ACCESORIOS*/
 
 h4 {
-  color: rgb(247, 249, 249);
-  margin: 15px 0px;
+  color: $white;
+  margin: ($step)+5 0px;
 }
 
 p {
-  color: rgb(247, 249, 249);
-  margin: 10px;
-  padding: 10px 30px;
+  color: $white;
+  margin: $step;
+  padding: $step ($step*3);
 }
 
 .agregar-a-carrito {
   display: inline-block;
   text-decoration: none;
-  color: rgb(13, 71, 161);
-  background-color: rgb(247, 249, 249);
-  padding: 10px 30px;
-  border: 3px solid rgb(247, 249, 249);
-  border-radius: 30px;
-  margin-top: 15px;
+  color: $blue;
+  background-color: $white;
+  padding: $step ($step*3);
+  border: 3px solid $white;
+  border-radius: ($step*3);
+  margin-top: ($step)+5;
   transition: all 0.4s;
 
   &:hover {
-    background: rgb(13, 71, 161);
-    color: rgb(247, 249, 249);
+    background: $blue;
+    color: $white;
   }
 }
 
 .joys {
-  width: 10vh;
+  width: ($alto)/10;
 }
 
 /*REGISTRO*/
@@ -256,7 +224,7 @@ p {
 }
 
 .form-check-input {
-  background: rgb(247, 249, 249);
+  background: $white;
 }
 
 /* RESPONSIVE */
@@ -279,8 +247,8 @@ p {
   }
 
   #fotos {
-    height: 45vh;
-    padding: 0 50px;
+    height: ($alto)-55;
+    padding: 0 ($step*5);
     margin: 5px;
   }
 
@@ -291,13 +259,13 @@ p {
   }
 
   #imagensesion {
-    height: 40vh;
+    height: ($alto)-60;
     padding: 0 2px;
     margin: 0 2px;
   }
 
   #datos {
-    margin: 20px 100px;
+    margin: ($step*2) ($step*10);
   }
 
   #accesorios1, #accesorios2 {
@@ -321,9 +289,8 @@ p {
   #registro {
     display: flexbox;
     justify-content: space-between;
-    padding: 50px 50px 50px 50px;
+    padding: ($step)*5;
 
 }
 
 }
-@import "footer","header";
